@@ -1,4 +1,5 @@
 ## Bibliotecas e dependencias utilizadas
+ - React version: ^18.0.0
  - Chakra-UI version: ^1.8.8
  - Yup version: ^0.32.11
  - Formik version: ^2.2.9
