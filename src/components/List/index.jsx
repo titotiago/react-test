@@ -68,7 +68,7 @@ export const List = () => {
                 <Textarea bg="white" value={content} onChange={(e) => setContent(e.target.value)}/>
             <Box display="flex" justifyContent="flex-end">
                 <Button disabled={!content || !title} colorScheme="purple" my="1rem" onClick={() => handleSubmit()}>
-                    Submit
+                    Enviar
                 </Button>
             </Box>
             </Box>

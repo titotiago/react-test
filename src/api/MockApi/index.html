@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fake Api JS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/vue@3"></script>
+</head>
+<body>
+<div id="app">
+    <div class="min-h-full">
+
+        <header class="bg-white shadow">
+            <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+                <h1 class="text-3xl font-bold text-gray-900">Fake Api JS</h1>
+            </div>
+        </header>
+        <main>
+            <div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+                <!-- Replace with your content -->
+                <div class="px-4 py-6 sm:px-0">
+                    <div class="border-4 border-dashed border-gray-200 rounded-lg">
+                        <div class="bg-white shadow overflow-hidden sm:rounded-lg">
+                            <div class="px-4 py-5 sm:px-6">
+                                <h3 class="text-lg leading-6 font-medium text-gray-900">Usuario</h3>
+                                <p class="mt-1 max-w-2xl text-sm text-gray-500">Chamadas de api do usuario.</p>
+                            </div>
+                            <div class="border-t border-gray-200">
+                                <dl>
+                                    <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                                        <dt class="text-sm font-medium text-gray-500">Login</dt>
+                                        <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                                            <code>FakerApi.post('/login', { username: 'teste', password: 'teste' })</code>
+                                            <button type="button" @click="simularLogin" class="block my-5 w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:my-3 sm:w-auto sm:text-sm" @click="open = false">
+                                                Simular
+                                            </button>
+                                            Resultado
+                                            <pre class="bg-gray-200 p-2">{{resultLogin}}</pre>
+                                        </dd>
+                                    </div>
+                                    <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                                        <dt class="text-sm font-medium text-gray-500">Logout</dt>
+                                        <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                                            <code>FakerApi.post('/logout', {})</code>
+                                            <button type="button" @click="simularLogout" class="block my-5 w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:my-3 sm:w-auto sm:text-sm" @click="open = false">
+                                                Simular
+                                            </button>
+                                            Resultado
+                                            <pre class="bg-gray-200 p-2">{{resultLogout}}</pre>
+                                        </dd>
+                                    </div>
+                                    <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                                        <dt class="text-sm font-medium text-gray-500">Register</dt>
+                                        <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                                            <code>FakerApi.post('/register', { name:'teste', username: 'teste', password: 'teste' })</code>
+                                            <button type="button" @click="simularRegister" class="block my-5 w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:my-3 sm:w-auto sm:text-sm" @click="open = false">
+                                                Simular
+                                            </button>
+                                            Resultado
+                                            <pre class="bg-gray-200 p-2">{{resultRegister}}</pre>
+                                        </dd>
+                                    </div>
+                                    <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                                        <dt class="text-sm font-medium text-gray-500">Me</dt>
+                                        <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                                            <code>FakerApi.get('/me', {})</code>
+                                            <button type="button" @click="simularMe" class="block my-5 w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:my-3 sm:w-auto sm:text-sm" @click="open = false">
+                                                Simular
+                                            </button>
+                                            Resultado
+                                            <pre class="bg-gray-200 p-2">{{resultMe}}</pre>
+                                        </dd>
+                                    </div>
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /End replace -->
+                <!-- Replace with your content -->
+                <div class="px-4 py-6 sm:px-0">
+                    <div class="border-4 border-dashed border-gray-200 rounded-lg">
+                        <div class="bg-white shadow overflow-hidden sm:rounded-lg">
+                            <div class="px-4 py-5 sm:px-6">
+                                <h3 class="text-lg leading-6 font-medium text-gray-900">Post</h3>
+                                <p class="mt-1 max-w-2xl text-sm text-gray-500">Chamadas de api do posts.</p>
+                            </div>
+                            <div class="border-t border-gray-200">
+                                <dl>
+                                    <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                                        <dt class="text-sm font-medium text-gray-500">Lista</dt>
+                                        <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                                            <code>FakerApi.get('/posts', {})</code>
+                                            <button type="button" @click="simularListaPosts" class="block my-5 w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:my-3 sm:w-auto sm:text-sm" @click="open = false">
+                                                Simular
+                                            </button>
+                                            Resultado
+                                            <pre class="bg-gray-200 p-2">{{resultListaPosts}}</pre>
+                                        </dd>
+                                    </div>
+                                    <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                                        <dt class="text-sm font-medium text-gray-500">Cria</dt>
+                                        <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                                            <code>FakerApi.post('/posts/create', { title:'teste', content: 'teste' })</code>
+                                            <button type="button" @click="simularCriaPost" class="block my-5 w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:my-3 sm:w-auto sm:text-sm" @click="open = false">
+                                                Simular
+                                            </button>
+                                            Resultado
+                                            <pre class="bg-gray-200 p-2">{{resultCriaPost}}</pre>
+                                        </dd>
+                                    </div>
+                                    <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                                        <dt class="text-sm font-medium text-gray-500">Busca</dt>
+                                        <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                                            <code>FakerApi.get('/posts/view', { post_id: 1 })</code>
+                                            <button type="button" @click="simularBuscaPost" class="block my-5 w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:my-3 sm:w-auto sm:text-sm" @click="open = false">
+                                                Simular
+                                            </button>
+                                            Resultado
+                                            <pre class="bg-gray-200 p-2">{{resultBuscaPost}}</pre>
+                                        </dd>
+                                    </div>
+                                    <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                                        <dt class="text-sm font-medium text-gray-500">Atualiza</dt>
+                                        <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                                            <code>FakerApi.put('/posts/update', { post_id: 1, post: { title:'teste', content:'teste atualizado' } })</code>
+                                            <button type="button" @click="simularAtualizaPost" class="block my-5 w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:my-3 sm:w-auto sm:text-sm" @click="open = false">
+                                                Simular
+                                            </button>
+                                            Resultado
+                                            <pre class="bg-gray-200 p-2">{{resultAtualizaPost}}</pre>
+                                        </dd>
+                                    </div>
+                                    <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                                        <dt class="text-sm font-medium text-gray-500">Remove</dt>
+                                        <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                                            <code>FakerApi.delete('/posts/remove', { post_id: 2 })</code>
+                                            <button type="button" @click="simularRemovePost" class="block my-5 w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:my-3 sm:w-auto sm:text-sm" @click="open = false">
+                                                Simular
+                                            </button>
+                                            Resultado
+                                            <pre class="bg-gray-200 p-2">{{resultRemovePost}}</pre>
+                                        </dd>
+                                    </div>
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /End replace -->
+                <!-- Replace with your content -->
+                <div class="px-4 py-6 sm:px-0">
+                    <div class="border-4 border-dashed border-gray-200 rounded-lg">
+                        <div class="bg-white shadow overflow-hidden sm:rounded-lg">
+                            <div class="px-4 py-5 sm:px-6">
+                                <h3 class="text-lg leading-6 font-medium text-gray-900">Commentarios</h3>
+                                <p class="mt-1 max-w-2xl text-sm text-gray-500">Chamadas de api dos comentarios.</p>
+                            </div>
+                            <div class="border-t border-gray-200">
+                                <dl>
+                                    <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                                        <dt class="text-sm font-medium text-gray-500">Lista</dt>
+                                        <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                                            <code>FakerApi.get('/comments', { post_id: 1 })</code>
+                                            <button type="button" @click="simularListaComments" class="block my-5 w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:my-3 sm:w-auto sm:text-sm" @click="open = false">
+                                                Simular
+                                            </button>
+                                            Resultado
+                                            <pre class="bg-gray-200 p-2">{{resultListaComments}}</pre>
+                                        </dd>
+                                    </div>
+                                    <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                                        <dt class="text-sm font-medium text-gray-500">Cria</dt>
+                                        <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                                            <code>FakerApi.post('/comments/create', { post_id: 1, comment: { content: 'Comentario teste' } })</code>
+                                            <button type="button" @click="simularCriaComment" class="block my-5 w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:my-3 sm:w-auto sm:text-sm" @click="open = false">
+                                                Simular
+                                            </button>
+                                            Resultado
+                                            <pre class="bg-gray-200 p-2">{{resultCriaComment}}</pre>
+                                        </dd>
+                                    </div>
+                                    <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                                        <dt class="text-sm font-medium text-gray-500">Busca</dt>
+                                        <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                                            <code>FakerApi.get('/comments/view', { post_id: 1, comment_id: 1 })</code>
+                                            <button type="button" @click="simularBuscaComment" class="block my-5 w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:my-3 sm:w-auto sm:text-sm" @click="open = false">
+                                                Simular
+                                            </button>
+                                            Resultado
+                                            <pre class="bg-gray-200 p-2">{{resultBuscaComment}}</pre>
+                                        </dd>
+                                    </div>
+                                    <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                                        <dt class="text-sm font-medium text-gray-500">Atualiza</dt>
+                                        <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                                            <code>FakerApi.put('/comments/update', { post_id: 1, comment_id: 1, post: { content:'Comentario atualizado' } })</code>
+                                            <button type="button" @click="simularAtualizaComment" class="block my-5 w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:my-3 sm:w-auto sm:text-sm" @click="open = false">
+                                                Simular
+                                            </button>
+                                            Resultado
+                                            <pre class="bg-gray-200 p-2">{{resultAtualizaComment}}</pre>
+                                        </dd>
+                                    </div>
+                                    <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                                        <dt class="text-sm font-medium text-gray-500">Remove</dt>
+                                        <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                                            <code>FakerApi.delete('/comments/remove', { post_id: 1, comment_id: 2 })</code>
+                                            <button type="button" @click="simularRemoveComment" class="block my-5 w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:my-3 sm:w-auto sm:text-sm" @click="open = false">
+                                                Simular
+                                            </button>
+                                            Resultado
+                                            <pre class="bg-gray-200 p-2">{{resultRemoveComment}}</pre>
+                                        </dd>
+                                    </div>
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /End replace -->
+            </div>
+        </main>
+    </div>
+</div>
+<script src="fakerApi.js"></script>
+<script>
+    Vue.createApp({
+        data() {
+            return {
+                resultLogin: [],
+                resultLogout: [],
+                resultRegister: [],
+                resultMe: [],
+                resultListaPosts: [],
+                resultCriaPost: [],
+                resultBuscaPost: [],
+                resultAtualizaPost: [],
+                resultRemovePost: [],
+                resultListaComments: [],
+                resultCriaComment: [],
+                resultBuscaComment: [],
+                resultAtualizaComment: [],
+                resultRemoveComment: [],
+            }
+        },
+        methods: {
+            async simularLogin() {
+                this.resultLogin = await window.FakerApi.post('/login', { username: 'teste2', password: 'teste2' }).catch((response) => response)
+            },
+            async simularLogout() {
+                this.resultLogout = await window.FakerApi.post('/logout', {}).catch((response) => response)
+            },
+            async simularRegister() {
+                this.resultRegister = await window.FakerApi.post('/register', { name:'teste2', username: 'teste2', password: 'teste2' }).catch((response) => response)
+            },
+            async simularMe() {
+                this.resultMe = await window.FakerApi.get('/me', {}).catch((response) => response)
+            },
+            async simularListaPosts() {
+                this.resultListaPosts = await window.FakerApi.get('/posts', {}).catch((response) => response)
+            },
+            async simularCriaPost() {
+                this.resultCriaPost = await window.FakerApi.post('/posts/create', { title:'teste', content: 'teste' }).catch((response) => response)
+            },
+            async simularBuscaPost() {
+                this.resultBuscaPost = await window.FakerApi.get('/posts/view', { post_id: 1 }).catch((response) => response)
+            },
+            async simularAtualizaPost() {
+                this.resultAtualizaPost = await window.FakerApi.put('/posts/update', { post_id: 1, post: { title:'teste', content:'teste atualizado' } }).catch((response) => response)
+            },
+            async simularRemovePost() {
+                this.resultRemovePost = await window.FakerApi.delete('/posts/remove', { post_id: 2 }).catch((response) => response)
+            },
+            async simularListaComments() {
+                this.resultListaComments = await window.FakerApi.get('/comments', { post_id: 1 }).catch((response) => response)
+            },
+            async simularCriaComment() {
+                this.resultCriaComment = await window.FakerApi.post('/comments/create', { post_id: 1, comment: { content: 'Comentario usuário 2' } }).catch((response) => response)
+            },
+            async simularBuscaComment() {
+                this.resultBuscaComment = await window.FakerApi.get('/comments/view', { post_id: 1, comment_id: 1 }).catch((response) => response)
+            },
+            async simularAtualizaComment() {
+                this.resultAtualizaComment = await window.FakerApi.put('/comments/update', { post_id: 1, comment_id: 1, comment: { content:'Comentario atualizado' } }).catch((response) => response)
+            },
+            async simularRemoveComment() {
+                this.resultRemoveComment = await window.FakerApi.delete('/comments/remove', { post_id: 1, comment_id: 2 }).catch((response) => response)
+            },
+        }
+    }).mount('#app')
+</script>
+</body>
+</html>
